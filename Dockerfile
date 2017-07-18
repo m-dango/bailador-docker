@@ -2,7 +2,7 @@ FROM alpine:3.6
 RUN apk update && apk add perl git gcc musl-dev make linux-headers curl
 WORKDIR /root/build
 
-RUN git clone --branch 2017.06 https://github.com/rakudo/rakudo.git \
+RUN git clone --branch 2017.07 https://github.com/rakudo/rakudo.git \
     && cd rakudo \
     && perl Configure.pl --prefix=/usr/local --backend=moar --gen-moar \
     && make install
