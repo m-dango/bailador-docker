@@ -12,7 +12,7 @@ RUN git clone --branch v0.1.26 https://github.com/ugexe/zef.git \
     && perl6 -Ilib bin/zef install .
 
 ENV PATH=/usr/local/share/perl6/site/bin:$PATH
-RUN zef install "Bailador:ver<0.0.9>" --force-test
+RUN zef install "Bailador:ver<0.0.10>"
 
 WORKDIR /root
 RUN rm -rf build/ && apk del gcc musl-dev make linux-headers
