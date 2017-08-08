@@ -7,12 +7,12 @@ RUN git clone --branch 2017.07 https://github.com/rakudo/rakudo.git \
     && perl Configure.pl --prefix=/usr/local --backend=moar --gen-moar \
     && make install
 
-RUN git clone --branch v0.1.23 https://github.com/ugexe/zef.git \
+RUN git clone --branch v0.1.26 https://github.com/ugexe/zef.git \
     && cd zef \
     && perl6 -Ilib bin/zef install .
 
 ENV PATH=/usr/local/share/perl6/site/bin:$PATH
-RUN zef install "Bailador:ver<0.0.8>" --force-test
+RUN zef install "Bailador:ver<0.0.9>" --force-test
 
 WORKDIR /root
 RUN rm -rf build/ && apk del gcc musl-dev make linux-headers
